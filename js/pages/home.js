@@ -163,78 +163,73 @@ PL.pages.home = (() => {
         </div>
       </section>
 
-      <!-- MÓDULO DE COTIZACIÓN AUTOMÁTICA (Teaser interactivo en Home) -->
+      <!-- MÓDULO DE COTIZACIÓN AUTOMÁTICA (Estructura de Compra y Cierre) -->
       <section class="py-20 bg-militar-900 text-beige-100 relative overflow-hidden">
         <div class="absolute inset-0 bg-pattern opacity-[0.04]"></div>
         <div class="container-x relative grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div class="lg:col-span-5 space-y-5">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-oro-500/20 text-oro-300 text-xs font-semibold tracking-wider uppercase">
-              ${I('calculator', 'w-4 h-4')} Herramienta Financiera
+              ${I('calculator', 'w-4 h-4')} Cotizador de Negociación y Cierre
             </div>
             <h2 class="font-display text-3xl sm:text-4xl text-beige-50 leading-tight">
-              Calcula tu inversión y plan de pagos al instante
+              Estructura tu compra y conoce los gastos reales de registro
             </h2>
             <p class="text-beige-300/80 text-sm sm:text-base leading-relaxed">
-              Utiliza nuestro cotizador automatizado para estimar cuotas mensuales, iniciales y proyección de amortización en minutos.
+              En operaciones de compraventa en Venezuela, los pagos se coordinan en etapas respaldadas legalmente. Conoce el desembolso por fases y los aranceles de registro estimados.
             </p>
             <ul class="space-y-3 text-sm text-beige-200">
-              <li class="flex items-center gap-2.5">${I('checkCircle', 'w-4 h-4 text-oro-400')} Cuota inicial ajustable (20% al 50%)</li>
-              <li class="flex items-center gap-2.5">${I('checkCircle', 'w-4 h-4 text-oro-400')} Simulación de financiamiento a 12, 24, 36 o 60 meses</li>
-              <li class="flex items-center gap-2.5">${I('checkCircle', 'w-4 h-4 text-oro-400')} Comparativa de compra de contado vs. cuotas</li>
+              <li class="flex items-center gap-2.5">${I('checkCircle', 'w-4 h-4 text-oro-400')} <strong>1. Reserva formal (10%):</strong> Congela el inmueble y retira la oferta del mercado</li>
+              <li class="flex items-center gap-2.5">${I('checkCircle', 'w-4 h-4 text-oro-400')} <strong>2. Opción de Compra (40%):</strong> Firma bilateral mientras se tramita la ficha catastral</li>
+              <li class="flex items-center gap-2.5">${I('checkCircle', 'w-4 h-4 text-oro-400')} <strong>3. Firma en Registro (50%):</strong> Liquidación contra documento definitivo SAREN</li>
             </ul>
             <div class="pt-2">
-              <a href="#/cotizador" class="btn btn-gold shadow-gold">${I('calculator', 'w-4 h-4')} Abrir cotizador completo</a>
+              <a href="#/cotizador" class="btn btn-gold shadow-gold">${I('calculator', 'w-4 h-4')} Cotizador detallado de Compra y Alquiler</a>
             </div>
           </div>
 
-          <!-- MINI SIMULADOR INTERACTIVO -->
+          <!-- MINI SIMULADOR INTERACTIVO DE ETAPAS -->
           <div class="lg:col-span-7 bg-militar-950/80 p-6 sm:p-8 rounded-3xl border border-white/10 shadow-2xl backdrop-blur-md">
             <h3 class="font-display text-2xl text-beige-100 mb-6 flex items-center justify-between">
-              Simulador Rápido <span class="text-xs font-sans text-oro-400 bg-oro-950/80 border border-oro-800 px-3 py-1 rounded-full">Tiempo Real</span>
+              Desglose de Adquisición <span class="text-xs font-sans text-oro-400 bg-oro-950/80 border border-oro-800 px-3 py-1 rounded-full">En Tiempo Real</span>
             </h3>
 
             <div class="space-y-5" id="home-calc-widget">
               <div>
                 <div class="flex justify-between text-xs text-beige-300 mb-1">
-                  <span>Valor del inmueble</span>
+                  <span>Valor de la propiedad</span>
                   <span class="font-bold text-oro-300 text-sm" id="calc-val-display">$ 75.000</span>
                 </div>
-                <input type="range" id="calc-price" min="20000" max="400000" step="5000" value="75000" class="w-full accent-oro-500 cursor-pointer">
+                <input type="range" id="calc-price" min="15000" max="400000" step="5000" value="75000" class="w-full accent-oro-500 cursor-pointer">
               </div>
 
-              <div class="grid grid-cols-2 gap-4">
-                <div>
-                  <div class="flex justify-between text-xs text-beige-300 mb-1">
-                    <span>Inicial (30%)</span>
-                    <span class="font-bold text-beige-100" id="calc-down-display">$ 22.500</span>
-                  </div>
-                  <input type="range" id="calc-down-pct" min="15" max="60" step="5" value="30" class="w-full accent-oro-500 cursor-pointer">
+              <!-- DESGLOSE DE ETAPAS REALES -->
+              <div class="grid grid-cols-3 gap-3 text-center">
+                <div class="p-3 bg-militar-900 rounded-2xl border border-white/5">
+                  <span class="block text-[11px] uppercase tracking-wider text-beige-400 font-semibold">1. Reserva (10%)</span>
+                  <strong class="font-display text-lg sm:text-xl text-beige-100 mt-1 block" id="calc-reserva">$ 7.500</strong>
                 </div>
-
-                <div>
-                  <div class="flex justify-between text-xs text-beige-300 mb-1">
-                    <span>Plazo de pago</span>
-                    <span class="font-bold text-beige-100" id="calc-term-display">24 meses</span>
-                  </div>
-                  <input type="range" id="calc-term" min="12" max="60" step="12" value="24" class="w-full accent-oro-500 cursor-pointer">
+                <div class="p-3 bg-militar-900 rounded-2xl border border-white/5">
+                  <span class="block text-[11px] uppercase tracking-wider text-beige-400 font-semibold">2. Opción (40%)</span>
+                  <strong class="font-display text-lg sm:text-xl text-beige-100 mt-1 block" id="calc-opcion">$ 30.000</strong>
+                </div>
+                <div class="p-3 bg-militar-900 rounded-2xl border border-white/5">
+                  <span class="block text-[11px] uppercase tracking-wider text-beige-400 font-semibold">3. Registro (50%)</span>
+                  <strong class="font-display text-lg sm:text-xl text-oro-400 mt-1 block" id="calc-saldo">$ 37.500</strong>
                 </div>
               </div>
 
-              <!-- RESULTADOS EN TIEMPO REAL -->
-              <div class="pt-4 border-t border-white/10 grid grid-cols-2 gap-4 text-center">
-                <div class="p-4 bg-militar-900 rounded-2xl border border-white/5">
-                  <span class="block text-xs uppercase tracking-wider text-beige-400">Cuota mensual estimada</span>
-                  <strong class="font-display text-2xl sm:text-3xl text-oro-400 mt-1 block" id="calc-monthly">$ 2.187</strong>
+              <!-- GASTOS LEGALES Y REGISTRO -->
+              <div class="p-4 bg-oro-950/40 rounded-2xl border border-oro-500/20 flex items-center justify-between text-xs">
+                <div>
+                  <span class="text-oro-300 font-bold block">Gastos de Cierre y Registro SAREN (~2.5%)</span>
+                  <span class="text-beige-300 text-[11px]">Aranceles públicos, visado de abogado y solvencias</span>
                 </div>
-                <div class="p-4 bg-militar-900 rounded-2xl border border-white/5">
-                  <span class="block text-xs uppercase tracking-wider text-beige-400">Saldo a financiar</span>
-                  <strong class="font-display text-2xl sm:text-3xl text-beige-100 mt-1 block" id="calc-balance">$ 52.500</strong>
-                </div>
+                <strong class="font-display text-xl text-oro-400" id="calc-gastos">$ 1.875</strong>
               </div>
 
               <div class="text-center pt-2">
                 <button type="button" id="btn-quote-advisor" class="btn btn-outline-light w-full justify-center">
-                  Consultar financiamiento con un asesor
+                  Consultar condiciones de negociación con un asesor
                 </button>
               </div>
             </div>
@@ -372,41 +367,29 @@ PL.pages.home = (() => {
       PL.router.go(`/propiedades${U.toQuery(q)}`);
     });
 
-    // Simulador rápido en tiempo real
+    // Cotizador rápido de etapas de adquisición
     const priceEl = root.querySelector('#calc-price');
-    const downEl = root.querySelector('#calc-down-pct');
-    const termEl = root.querySelector('#calc-term');
 
     function updateCalc() {
       if (!priceEl) return;
       const price = +priceEl.value;
-      const downPct = +downEl.value;
-      const term = +termEl.value;
-
-      const downVal = Math.round(price * (downPct / 100));
-      const balance = price - downVal;
-      // Interés referencial 0% a 5% anual en financiamientos directos
-      const annualRate = 0.04;
-      const monthlyRate = annualRate / 12;
-      let monthly = 0;
-      if (monthlyRate > 0) {
-        monthly = Math.round((balance * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -term)));
-      } else {
-        monthly = Math.round(balance / term);
-      }
+      const reserva = Math.round(price * 0.10);
+      const opcion = Math.round(price * 0.40);
+      const saldo = Math.round(price * 0.50);
+      const gastos = Math.round(price * 0.025);
 
       root.querySelector('#calc-val-display').textContent = U.fmtMoney(price);
-      root.querySelector('#calc-down-display').textContent = `${U.fmtMoney(downVal)} (${downPct}%)`;
-      root.querySelector('#calc-term-display').textContent = `${term} meses`;
-      root.querySelector('#calc-monthly').textContent = U.fmtMoney(monthly);
-      root.querySelector('#calc-balance').textContent = U.fmtMoney(balance);
+      root.querySelector('#calc-reserva').textContent = U.fmtMoney(reserva);
+      root.querySelector('#calc-opcion').textContent = U.fmtMoney(opcion);
+      root.querySelector('#calc-saldo').textContent = U.fmtMoney(saldo);
+      root.querySelector('#calc-gastos').textContent = U.fmtMoney(gastos);
     }
 
-    [priceEl, downEl, termEl].forEach((i) => i?.addEventListener('input', updateCalc));
+    priceEl?.addEventListener('input', updateCalc);
     updateCalc();
 
     root.querySelector('#btn-quote-advisor')?.addEventListener('click', () => {
-      PL.router.go(`/cotizador?price=${priceEl.value}&down=${downEl.value}&term=${termEl.value}`);
+      PL.router.go(`/cotizador?price=${priceEl.value}`);
     });
 
     // Envío de solicitud de captación (lead)

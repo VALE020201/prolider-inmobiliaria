@@ -824,3 +824,28 @@ body {
   scrollbar-width: none;
 }
 
+/* Modo de impresión / Exportación a PDF para cotizaciones */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #171b12 !important;
+  }
+  .site-header,
+  .bottom-nav,
+  footer,
+  .print\:hidden {
+    display: none !important;
+  }
+  .page-enter {
+    padding-top: 0 !important;
+  }
+  .container-x {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  .shadow-xl, .shadow-sm, .shadow-md, .shadow-gold {
+    box-shadow: none !important;
+  }
+}
+
+

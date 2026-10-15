@@ -198,61 +198,82 @@ PL.pages.propertyDetail = (() => {
                 </div>
               ` : ''}
 
-              <!-- MÓDULO DE COTIZACIÓN AUTOMÁTICA INTEGRADA -->
+              <!-- MÓDULO DE ESTRUCTURA DE PAGO Y GASTOS DE CIERRE -->
               <div class="bg-gradient-to-br from-militar-900 via-militar-950 to-militar-900 text-beige-100 p-6 sm:p-8 rounded-3xl border border-oro-500/30 shadow-xl space-y-6">
                 <div class="flex items-center justify-between border-b border-white/10 pb-4">
                   <div>
-                    <span class="text-xs font-bold uppercase tracking-widest text-oro-400">Simulación Financiera</span>
-                    <h3 class="font-display text-2xl text-beige-50">Cotizador para esta Propiedad</h3>
+                    <span class="text-xs font-bold uppercase tracking-widest text-oro-400">Guía de Negociación</span>
+                    <h3 class="font-display text-2xl text-beige-50">
+                      ${p.operation === 'alquiler' ? 'Presupuesto de Entrada para Alquiler' : 'Estructura de Compra y Gastos de Registro'}
+                    </h3>
                   </div>
                   ${I('calculator', 'w-7 h-7 text-oro-400')}
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div>
-                    <label class="block text-xs uppercase tracking-wider text-beige-300 font-semibold mb-2">
-                      Porcentaje de Inicial (<span id="prop-down-pct-val">30</span>%)
-                    </label>
-                    <input type="range" id="prop-calc-down" min="15" max="60" step="5" value="30" class="w-full accent-oro-500 cursor-pointer">
-                    <div class="flex justify-between text-xs text-beige-400 mt-1">
-                      <span>15%</span>
-                      <span>Monto: <strong class="text-oro-300" id="prop-down-amount">$ 0</strong></span>
-                      <span>60%</span>
+                ${p.operation === 'alquiler' ? `
+                  <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 text-center">
+                    <div class="p-3 bg-white/5 rounded-2xl border border-white/10">
+                      <span class="text-[11px] uppercase tracking-wider text-beige-400 block font-semibold">Canon mensual</span>
+                      <strong class="font-display text-xl text-beige-50 block mt-1">${U.fmtMoney(p.price, p.currency)}</strong>
+                    </div>
+                    <div class="p-3 bg-white/5 rounded-2xl border border-white/10">
+                      <span class="text-[11px] uppercase tracking-wider text-beige-400 block font-semibold">Depósito (2 meses)</span>
+                      <strong class="font-display text-xl text-beige-50 block mt-1">${U.fmtMoney(p.price * 2, p.currency)}</strong>
+                    </div>
+                    <div class="p-3 bg-white/5 rounded-2xl border border-white/10">
+                      <span class="text-[11px] uppercase tracking-wider text-beige-400 block font-semibold">Adelanto (3 meses)</span>
+                      <strong class="font-display text-xl text-beige-50 block mt-1">${U.fmtMoney(p.price * 3, p.currency)}</strong>
+                    </div>
+                    <div class="p-3 bg-white/5 rounded-2xl border border-white/10">
+                      <span class="text-[11px] uppercase tracking-wider text-oro-300 block font-semibold">Honorarios / Contrato</span>
+                      <strong class="font-display text-xl text-oro-400 block mt-1">${U.fmtMoney(p.price, p.currency)}</strong>
+                    </div>
+                  </div>
+                  <div class="p-4 bg-oro-950/50 rounded-2xl border border-oro-500/30 flex items-center justify-between">
+                    <div>
+                      <span class="text-xs font-bold text-oro-300 block">Total estimado para ingresar al inmueble</span>
+                      <span class="text-[11px] text-beige-300">Depósito en garantía + adelanto + redacción jurídica</span>
+                    </div>
+                    <strong class="font-display text-2xl sm:text-3xl text-oro-400">${U.fmtMoney(p.price * 6, p.currency)}</strong>
+                  </div>
+                ` : `
+                  <!-- DESGLOSE DE ETAPAS DE COMPRA -->
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
+                    <div class="p-4 bg-white/5 rounded-2xl border border-white/10">
+                      <span class="text-[11px] uppercase tracking-wider text-beige-400 block font-semibold">1. Reserva Formal (10%)</span>
+                      <strong class="font-display text-xl sm:text-2xl text-beige-50 block mt-1">${U.fmtMoney(Math.round(p.price * 0.10), p.currency)}</strong>
+                      <span class="text-[10px] text-beige-400 mt-1 block">Retiro del mercado y congelación de precio</span>
+                    </div>
+                    <div class="p-4 bg-white/5 rounded-2xl border border-white/10">
+                      <span class="text-[11px] uppercase tracking-wider text-beige-400 block font-semibold">2. Opción a Compra (40%)</span>
+                      <strong class="font-display text-xl sm:text-2xl text-beige-50 block mt-1">${U.fmtMoney(Math.round(p.price * 0.40), p.currency)}</strong>
+                      <span class="text-[10px] text-beige-400 mt-1 block">Firma bilateral con arras confirmatorias</span>
+                    </div>
+                    <div class="p-4 bg-white/5 rounded-2xl border border-white/10">
+                      <span class="text-[11px] uppercase tracking-wider text-oro-300 block font-semibold">3. Firma en Registro (50%)</span>
+                      <strong class="font-display text-xl sm:text-2xl text-oro-400 block mt-1">${U.fmtMoney(Math.round(p.price * 0.50), p.currency)}</strong>
+                      <span class="text-[10px] text-oro-300/80 mt-1 block">Liquidación final contra documento SAREN</span>
                     </div>
                   </div>
 
-                  <div>
-                    <label class="block text-xs uppercase tracking-wider text-beige-300 font-semibold mb-2">
-                      Plazo de financiamiento
-                    </label>
-                    <select id="prop-calc-term" class="input input-sm bg-militar-800 text-beige-100 w-full border-white/20 rounded-xl">
-                      <option value="12">12 meses (1 año)</option>
-                      <option value="24" selected>24 meses (2 años)</option>
-                      <option value="36">36 meses (3 años)</option>
-                      <option value="48">48 meses (4 años)</option>
-                      <option value="60">60 meses (5 años)</option>
-                    </select>
+                  <!-- GASTOS DE REGISTRO SAREN -->
+                  <div class="p-4 bg-oro-950/40 rounded-2xl border border-oro-500/20 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+                    <div>
+                      <strong class="text-oro-300 block">Aranceles de Registro Inmobiliario SAREN (~2.5%):</strong>
+                      <span class="text-beige-300 text-[11px]">Cálculo referencial según tasas públicas, visado de abogado y solvencias municipales</span>
+                    </div>
+                    <strong class="font-display text-xl text-oro-400 sm:text-right shrink-0">${U.fmtMoney(Math.round(p.price * 0.025), p.currency)}</strong>
                   </div>
-                </div>
+                `}
 
-                <!-- DESGLOSE DE CUOTA Y SALDO -->
-                <div class="p-5 bg-white/5 rounded-2xl border border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
-                  <div>
-                    <span class="text-[11px] uppercase tracking-wider text-beige-400 block">Inicial estimada</span>
-                    <strong class="font-display text-2xl text-beige-50 block mt-1" id="prop-res-down">$ 0</strong>
-                  </div>
-                  <div>
-                    <span class="text-[11px] uppercase tracking-wider text-beige-400 block">Saldo a financiar</span>
-                    <strong class="font-display text-2xl text-beige-50 block mt-1" id="prop-res-balance">$ 0</strong>
-                  </div>
-                  <div class="border-t sm:border-t-0 sm:border-l border-white/10 pt-3 sm:pt-0">
-                    <span class="text-[11px] uppercase tracking-wider text-oro-300 font-bold block">Cuota mensual est.</span>
-                    <strong class="font-display text-3xl text-oro-400 block mt-1" id="prop-res-monthly">$ 0</strong>
-                  </div>
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-2 pt-2 border-t border-white/10 text-center sm:text-left">
+                  <p class="text-[11px] text-beige-400/80 italic">
+                    * ${p.operation === 'alquiler' ? 'Perfil requerido: Persona Jurídica o Natural con fiador comercial solvente.' : 'Plazos habituales entre Opción y Firma SAREN: 30 a 45 días hábiles.'}
+                  </p>
+                  <a href="#/cotizador?op=${p.operation}&price=${p.price}" class="inline-flex items-center gap-1.5 text-xs text-oro-300 hover:text-oro-200 font-bold underline shrink-0">
+                    ${I('calculator', 'w-3.5 h-3.5 text-oro-400')} Cotizador interactivo completo →
+                  </a>
                 </div>
-                <p class="text-[11px] text-beige-400/80 text-center italic">
-                  * Valores referenciales sujetos a políticas del propietario y condiciones de negociación.
-                </p>
               </div>
 
               <!-- MAPA DE UBICACIÓN APROXIMADA -->
@@ -344,9 +365,10 @@ PL.pages.propertyDetail = (() => {
                     <div class="field">
                       <label class="field-label text-xs">Modalidad de pago</label>
                       <select name="financing" class="input input-sm text-xs">
-                        <option value="Contado">Pago de Contado</option>
-                        <option value="Financiamiento corto">Financiamiento (3 a 6 meses)</option>
-                        <option value="Crédito bancario">Crédito bancario / Hipotecario</option>
+                        <option value="Contado (Transferencia / Efectivo)">Pago de Contado (Transferencia / Efectivo)</option>
+                        <option value="Pago en 2 partes (Opción y Registro - 30 a 45 días)">Pago en 2 partes (Opción y Registro - 30 a 45 días)</option>
+                        <option value="Plan de pago corto (hasta 60 días)">Plan de pago corto acordado (hasta 60 días)</option>
+                        <option value="Permuta con diferencia económica">Permuta con diferencia económica</option>
                       </select>
                     </div>
 
@@ -420,30 +442,6 @@ PL.pages.propertyDetail = (() => {
       PL.ui.toast(added ? 'Propiedad guardada en favoritos' : 'Eliminada de favoritos', 'info');
     });
 
-    // Cotizador automático reactivo
-    const downRange = root.querySelector('#prop-calc-down');
-    const termSelect = root.querySelector('#prop-calc-term');
-
-    function updatePropCalc() {
-      if (!downRange || !p.price) return;
-      const pct = +downRange.value;
-      const term = +termSelect.value;
-      const price = p.price;
-
-      const downVal = Math.round(price * (pct / 100));
-      const balance = price - downVal;
-      const monthly = Math.round(balance / term);
-
-      root.querySelector('#prop-down-pct-val').textContent = pct;
-      root.querySelector('#prop-down-amount').textContent = U.fmtMoney(downVal, p.currency);
-      root.querySelector('#prop-res-down').textContent = U.fmtMoney(downVal, p.currency);
-      root.querySelector('#prop-res-balance').textContent = U.fmtMoney(balance, p.currency);
-      root.querySelector('#prop-res-monthly').textContent = U.fmtMoney(monthly, p.currency);
-    }
-
-    downRange?.addEventListener('input', updatePropCalc);
-    termSelect?.addEventListener('change', updatePropCalc);
-    updatePropCalc();
 
     // Envío del Formulario de Oferta Formal
     const offerForm = root.querySelector('#offer-form');

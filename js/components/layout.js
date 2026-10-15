@@ -172,7 +172,7 @@ PL.layout = (() => {
             <h4 class="footer-title">ProLíder</h4>
             <ul class="space-y-2 text-sm">
               <li><a class="footer-link" href="#/asesores">Nuestros asesores</a></li>
-              <li><a class="footer-link" href="#/cotizador">Cotizador y financiamiento</a></li>
+              <li><a class="footer-link" href="#/cotizador">Cotizador y gastos de cierre</a></li>
               <li><a class="footer-link" href="#/?s=publicar">Publica tu inmueble</a></li>
               <li><a class="footer-link" href="#/asesor">Portal de asesores</a></li>
             </ul>

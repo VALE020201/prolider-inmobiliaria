@@ -64,7 +64,7 @@ PL.catalogs = (() => {
     { key: 'EUR', symbol: '€',   label: 'Euros (EUR)' },
     { key: 'VES', symbol: 'Bs.', label: 'Bolívares (VES)' },
   ];
-  const paymentOptions = ['Contado', 'Crédito bancario', 'Financiamiento directo', 'Permuta', 'Criptoactivos'];
+  const paymentOptions = ['Contado (Transferencia / Efectivo)', 'Pago en 2 partes (Opción y Registro - 30 a 45 días)', 'Plan corto acordado (hasta 60 días)', 'Permuta con diferencia'];
 
   /** Amenidades agrupadas (el formulario las muestra como chips por grupo). */
   const amenityGroups = [

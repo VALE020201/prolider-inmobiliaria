@@ -24,7 +24,7 @@ La plataforma utiliza una escala armónica de lujo y exclusividad:
   * Selector rápido de tipos con botones píldora (*Casa, Penthouse, Townhouse, Apartamento, Local comercial, Terreno, Galpón, Oficina, etc.*).
   * Filtros por municipios de Carabobo, rango de precio en USD y cantidad de habitaciones.
   * Catálogo de propiedades destacadas con estatus comercial y amenidades clave.
-  * **Simulador de Cotización Automática en vivo**: Proyección de inicial y cuotas mensuales.
+  * **Simulador de Cotización Automática en vivo**: Estructura de desembolso por etapas de compraventa (Reserva, Opción y Registro SAREN) o presupuesto de entrada en alquiler.
   * Sección "Nuestros Asesores" con acceso a perfiles y catálogo asignado.
   * Formulario de captación para propietarios que desean vender o alquilar.
 * **Catálogo Completo (`#/propiedades`)**:
@@ -34,7 +34,7 @@ La plataforma utiliza una escala armónica de lujo y exclusividad:
   * Galería de alta resolución con selector interactivo y visor **Lightbox a pantalla completa** con soporte táctil (swipe) y teclado.
   * Ficha técnica exhaustiva (metrajes de construcción y terreno, habitaciones, baños, puestos, condición, año, niveles).
   * Amenidades agrupadas (*Seguridad 24h, Pozo de agua, Planta eléctrica, Piscina, Parrillera, etc.*).
-  * **Módulo de Cotización Automática integrado**: Calcula cuota mensual, saldo a financiar y gastos de cierre referenciales (~3%) ajustados al precio base del inmueble.
+  * **Módulo de Cotización Automática integrado**: Desglose transparente en 3 etapas de compra (10% Reserva, 40% Opción, 50% Saldo contra Registro SAREN) o presupuesto de entrada en alquiler (depósito en garantía + adelanto + honorarios y contrato), junto con la estimación de aranceles de registro SAREN (~2.5%).
   * Mapa visual corporativo de ubicación aproximada.
   * Tarjeta de contacto directo del asesor asignado con enlace pre-redactado de WhatsApp y llamada.
   * **Sistema de Ofertas Económicas Formales**: Formulario donde los clientes registrados envían su propuesta económica y condiciones de pago al asesor.
