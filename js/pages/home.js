@@ -278,11 +278,21 @@ PL.pages.home = (() => {
                   <div class="flex items-center gap-2">${I('checkCircle', 'w-4 h-4 text-oro-400')} Filtrado de prospectos</div>
                   <div class="flex items-center gap-2">${I('checkCircle', 'w-4 h-4 text-oro-400')} Trámites legales y registro</div>
                 </div>
+                <div class="pt-2">
+                  <a href="#/valorar" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-oro-400 hover:bg-oro-300 text-militar-950 font-bold text-xs sm:text-sm shadow-gold transition">
+                    ${I('sparkles', 'w-4 h-4')} Simular Valoración de mi Inmueble Online →
+                  </a>
+                </div>
               </div>
 
               <!-- FORMULARIO RÁPIDO DE CONTACTO / CAPTACIÓN -->
               <div class="lg:col-span-6 bg-white rounded-2xl p-6 sm:p-8 text-militar-900 shadow-xl">
-                <h3 class="font-display text-2xl text-militar-950 mb-1">Registra tu inmueble</h3>
+                <div class="flex items-center justify-between mb-1">
+                  <h3 class="font-display text-2xl text-militar-950">Registra tu inmueble</h3>
+                  <a href="#/valorar" class="text-xs text-oro-700 font-bold hover:underline hidden sm:inline-flex items-center gap-1">
+                    ${I('calculator', 'w-3.5 h-3.5')} Simulador detallado →
+                  </a>
+                </div>
                 <p class="text-xs text-militar-600 mb-5">Uno de nuestros asesores especializados te contactará hoy mismo.</p>
                 <form id="lead-form" class="space-y-3.5">
                   <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">

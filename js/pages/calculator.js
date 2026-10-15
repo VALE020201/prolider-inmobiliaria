@@ -36,6 +36,22 @@ PL.pages.calculator = (() => {
             </p>
           </div>
 
+          <!-- BANNER VALORADOR DE INMUEBLE PARA PROPIETARIOS -->
+          <div class="mb-8 p-4 rounded-2xl bg-gradient-to-r from-oro-100/90 to-beige-100 border border-oro-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 print:hidden">
+            <div class="flex items-center gap-3">
+              <span class="p-2.5 rounded-xl bg-oro-500 text-militar-950 font-bold shrink-0">
+                ${I('sparkles', 'w-5 h-5')}
+              </span>
+              <div>
+                <strong class="text-militar-950 text-sm font-bold block">¿Eres propietario y deseas saber cuánto vale tu propiedad?</strong>
+                <span class="text-xs text-militar-600">Calcula la estimación de tu inmueble con electrodomésticos y bondades en nuestro simulador.</span>
+              </div>
+            </div>
+            <a href="#/valorar" class="btn btn-sm btn-gold shrink-0">
+              Valorar mi Inmueble →
+            </a>
+          </div>
+
           <!-- SELECTOR DE OPERACIÓN (TABS) -->
           <div class="flex justify-center mb-8 print:hidden">
             <div class="inline-flex p-1.5 bg-beige-200/80 rounded-2xl border border-beige-300/70 shadow-inner">

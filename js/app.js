@@ -79,6 +79,8 @@ PL.app = (() => {
     PL.router.add('/propiedades', 'properties');
     PL.router.add('/propiedad/:id', 'propertyDetail');
     PL.router.add('/cotizador', 'calculator');
+    PL.router.add('/valorar', 'valuation');
+    PL.router.add('/valorar-inmueble', 'valuation');
     PL.router.add('/asesores', 'advisors');
     PL.router.add('/asesores/:id', 'advisors');
     PL.router.add('/mi-cuenta', 'account');

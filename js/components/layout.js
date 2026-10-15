@@ -80,6 +80,7 @@ PL.layout = (() => {
       { href: '#/propiedades', label: 'Propiedades', active: ctx.path === '/propiedades' && !op },
       { href: '#/asesores', label: 'Asesores', active: ctx.path.startsWith('/asesores') },
       { href: '#/cotizador', label: 'Cotizador', active: ctx.path === '/cotizador' },
+      { href: '#/valorar', label: 'Valorar Inmueble', active: ctx.path === '/valorar' },
     ];
     return `
       <header id="site-header" class="site-header ${transparent ? 'is-transparent' : ''}">
@@ -173,6 +174,7 @@ PL.layout = (() => {
             <ul class="space-y-2 text-sm">
               <li><a class="footer-link" href="#/asesores">Nuestros asesores</a></li>
               <li><a class="footer-link" href="#/cotizador">Cotizador y gastos de cierre</a></li>
+              <li><a class="footer-link" href="#/valorar">Valorar mi inmueble</a></li>
               <li><a class="footer-link" href="#/?s=publicar">Publica tu inmueble</a></li>
               <li><a class="footer-link" href="#/asesor">Portal de asesores</a></li>
             </ul>

@@ -42,6 +42,12 @@ La plataforma utiliza una escala armónica de lujo y exclusividad:
   * Buscador de asesores y perfil individual con biografía, redes sociales y sus inmuebles asignados.
 * **Portal del Cliente (`#/mi-cuenta`)**:
   * Seguimiento de ofertas, respuestas de asesores, aceptación de contraofertas y favoritos guardados.
+* **Simulador de Valoración Inmobiliaria para Propietarios (`#/valorar`)**:
+  * Formulario exhaustivo donde el propietario indica tipo (Casa, Apartamento, Penthouse, Townhouse, etc.), operación (Venta/Alquiler), ubicación, m² de construcción y terreno, distribución (habitaciones, baños, puestos techados), nivel y estado.
+  * Selector interactivo de **electrodomésticos y línea blanca que deja** (nevera, cocina, horno, campana, lavadora, secadora, aires acondicionados split, tanque con bomba, etc.).
+  * Selección de bondades críticas (Pozo de agua, Planta eléctrica 100%, Gas directo, Vigilancia 24/7).
+  * **Motor de simulación algorítmica en tiempo real** con estimación de rango de mercado y termómetro de liquidez/demanda.
+  * **Conexión directa a WhatsApp**: Construye y envía el reporte estructurado directamente al WhatsApp del asesor (asignando preferiblemente a **Ana Gabriela Farfán** o seleccionando un asesor aleatorio del equipo ProLíder).
 
 ---
 
