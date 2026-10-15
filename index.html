@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProLíder Inmobiliaria | Compra, Venta y Alquiler de Inmuebles en Venezuela</title>
+    <meta name="description" content="Plataforma inmobiliaria moderna de ProLíder. Compra, venta y alquiler de casas, apartamentos, penthouses y terrenos en Valencia y Carabobo." />
+    <meta name="theme-color" content="#171b12" />
+
+    <!-- Favicon corporativo SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><rect width='40' height='40' rx='10' fill='%232f3624'/><path d='M10 21l10-9 10 9M16 30V21h5a3 3 0 0 1 0 6h-5' stroke='%23d4b25e' stroke-width='2.5' fill='none' stroke-linecap='round'/></svg>" />
+
+    <!-- Google Fonts: Manrope (Sans moderna) & Fraunces (Serif elegante luxury) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS (CDN Oficial) con configuración extendida para la paleta Verde Militar, Dorado y Beige -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              militar: {
+                50: '#f4f6f0',
+                100: '#e6ebde',
+                200: '#cfd8c0',
+                300: '#b0bf9a',
+                400: '#8fa273',
+                500: '#6f8352',
+                600: '#56683e',
+                700: '#434f2e',
+                800: '#363f27',
+                900: '#2f3624',
+                950: '#171b12',
+              },
+              oro: {
+                50: '#fdfbf2',
+                100: '#f9f4dd',
+                200: '#f2e7b8',
+                300: '#ebd9a0',
+                400: '#dfc270',
+                500: '#d4b25e',
+                600: '#be9845',
+                700: '#997534',
+                800: '#7c5e2d',
+                900: '#674e28',
+                950: '#3a2a12',
+              },
+              beige: {
+                50: '#faf8f5',
+                100: '#f5f0e8',
+                200: '#ede4d5',
+                300: '#ded0ba',
+                400: '#cbb698',
+                500: '#b89d78',
+                600: '#a48460',
+                700: '#876a4e',
+                800: '#6f5743',
+                900: '#5c4839',
+                950: '#32261d',
+              },
+            },
+            fontFamily: {
+              sans: ['Manrope', 'sans-serif'],
+              display: ['Fraunces', 'Georgia', 'serif'],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Estilos personalizados Luxury -->
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body class="bg-beige-50 text-militar-950 min-h-screen flex flex-col antialiased selection:bg-oro-300 selection:text-militar-950">
+    <!-- Contenedor Raíz de la Aplicación (SPA) -->
+    <div id="app" class="flex-1 flex flex-col"></div>
+
+    <!-- Contenedores para Modales y Notificaciones Toasts -->
+    <div id="modal-root"></div>
+    <div id="toast-root"></div>
+
+    <!-- Scripts de Datos e Infraestructura Base -->
+    <script src="js/data/seed.js"></script>
+    <script src="js/data/catalogs.js"></script>
+    <script src="js/components/icons.js"></script>
+
+    <!-- Scripts del Núcleo (Core) -->
+    <script src="js/core/utils.js"></script>
+    <script src="js/core/media.js"></script>
+    <script src="js/core/store.js"></script>
+    <script src="js/core/auth.js"></script>
+    <script src="js/core/ui.js"></script>
+    <script src="js/core/router.js"></script>
+
+    <!-- Componentes de Interfaz y Layouts -->
+    <script src="js/components/layout.js"></script>
+    <script src="js/components/cards.js"></script>
+
+    <!-- Páginas del Portal Público -->
+    <script src="js/pages/home.js"></script>
+    <script src="js/pages/properties.js"></script>
+    <script src="js/pages/property-detail.js"></script>
+    <script src="js/pages/calculator.js"></script>
+    <script src="js/pages/advisors.js"></script>
+    <script src="js/pages/account.js"></script>
+
+    <!-- Páginas del Panel de Asesores (Backoffice / CRM) -->
+    <script src="js/pages/advisor-login.js"></script>
+    <script src="js/pages/advisor-dashboard.js"></script>
+    <script src="js/pages/advisor-properties.js"></script>
+    <script src="js/pages/advisor-property-form.js"></script>
+    <script src="js/pages/advisor-offers.js"></script>
+    <script src="js/pages/advisor-profile.js"></script>
+
+    <!-- Bootloader y Ejecución -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
+
